@@ -26,6 +26,8 @@ const servers: Server[] = [
   { id: '4', name: 'Токио', country: 'Япония', flag: '🇯🇵', ping: 180 },
   { id: '5', name: 'Лондон', country: 'Великобритания', flag: '🇬🇧', ping: 60 },
   { id: '6', name: 'Сингапур', country: 'Сингапур', flag: '🇸🇬', ping: 200 },
+  { id: '7', name: 'Монако', country: 'Монако', flag: '🇲🇨', ping: 50 },
+  { id: '8', name: 'Люксембург', country: 'Люксембург', flag: '🇱🇺', ping: 55 },
 ];
 
 const Index = () => {
