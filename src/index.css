@@ -113,3 +113,37 @@
     height: 0 !important;
   }
 }
+
+.cyber-watermark {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 255, 0.1),
+    rgba(0, 150, 255, 0.1)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+  z-index: 9999;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(0, 255, 255, 0.4);
+  }
+}

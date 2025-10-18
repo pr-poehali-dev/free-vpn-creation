@@ -59,6 +59,11 @@ const servers: Server[] = [
   { id: '36', name: 'Афины', country: 'Греция', flag: '🇬🇷', ping: 68, load: 43 },
   { id: '37', name: 'Лиссабон', country: 'Португалия', flag: '🇵🇹', ping: 72, load: 46 },
   { id: '38', name: 'Копенгаген', country: 'Дания', flag: '🇩🇰', ping: 49, load: 36 },
+  { id: '39', name: 'Варшава', country: 'Польша', flag: '🇵🇱', ping: 37, load: 31 },
+  { id: '40', name: 'Киев', country: 'Украина', flag: '🇺🇦', ping: 25, load: 34 },
+  { id: '41', name: 'Манила', country: 'Филиппины', flag: '🇵🇭', ping: 215, load: 68 },
+  { id: '42', name: 'Будапешт', country: 'Венгрия', flag: '🇭🇺', ping: 41, load: 29 },
+  { id: '43', name: 'Рейкьявик', country: 'Исландия', flag: '🇮🇸', ping: 56, load: 22 },
 ];
 
 const Index = () => {
@@ -72,6 +77,7 @@ const Index = () => {
   const [traffic, setTraffic] = useState(0);
   const [connectionTime, setConnectionTime] = useState(0);
   const [serverLoads, setServerLoads] = useState<Record<string, number>>({});
+  const [activeUsers, setActiveUsers] = useState(12847);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -92,6 +98,17 @@ const Index = () => {
 
     return () => clearInterval(interval);
   }, [isConnected]);
+
+  useEffect(() => {
+    const userInterval = setInterval(() => {
+      setActiveUsers(prev => {
+        const change = Math.floor(Math.random() * 20) - 10;
+        return Math.max(12000, Math.min(15000, prev + change));
+      });
+    }, 3000);
+
+    return () => clearInterval(userInterval);
+  }, []);
 
   const toggleConnection = () => {
     if (!isConnected) {
@@ -122,13 +139,28 @@ Endpoint = ${selectedServer.name.toLowerCase().replace(/\s/g, '')}.cybervpn.io:5
 AllowedIPs = 0.0.0.0/0, ::/0
 PersistentKeepalive = 25
 
-# Advanced Anti-DPI & Anti-Blocking Settings
-# Obfuscation: ChaCha20-Poly1305
+# ===== ПОЛНЫЙ ОБХОД БЛОКИРОВОК =====
+# Обход глушилок: Enabled
+# Доступ к запрещённым сайтам: ALL
+# Обход DPI (Deep Packet Inspection): Active
+# Обход блокировок по IP/DNS: Enabled
+# 
+# ===== ТЕХНОЛОГИИ ЗАЩИТЫ =====
+# Шифрование: ChaCha20-Poly1305
 # Protocol Masking: HTTPS (443), DNS (53), NTP (123)
-# Deep Packet Inspection Bypass: Enabled
-# Traffic Shaping: Randomized packet sizes
+# Traffic Obfuscation: XOR + Random Padding
 # SNI Fragmentation: Active
-# ECH (Encrypted Client Hello): Enabled`;
+# ECH (Encrypted Client Hello): Enabled
+# TLS 1.3 0-RTT: Enabled
+# DNS-over-HTTPS (DoH): Cloudflare + Google
+# QUIC Protocol Support: Yes
+# 
+# ===== ОБХОД ОГРАНИЧЕНИЙ =====
+# Torrent: Unlimited
+# Streaming: All platforms unlocked
+# Social Media: Full access
+# Gaming: Low latency optimized
+# GeoBlock Bypass: All regions`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
@@ -142,6 +174,17 @@ PersistentKeepalive = 25
           <p className="text-xl text-muted-foreground font-light">
             VPN SECRET - Быстро надёжно! С нами можно все!
           </p>
+          
+          <div className="mt-8 inline-flex items-center gap-3 bg-primary/10 border border-primary/30 rounded-full px-6 py-3">
+            <div className="relative">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+            </div>
+            <span className="text-lg font-semibold">
+              <span className="gradient-text text-2xl font-bold">{activeUsers.toLocaleString()}</span>
+              <span className="text-muted-foreground ml-2">пользователей онлайн</span>
+            </span>
+          </div>
         </header>
 
         <div className="grid lg:grid-cols-3 gap-6 mb-12">
@@ -294,9 +337,9 @@ PersistentKeepalive = 25
                 <Icon name="Zap" size={28} className="text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Обход блокировок</h3>
+                <h3 className="text-xl font-bold mb-2">Полный обход блокировок</h3>
                 <p className="text-muted-foreground">
-                  Полный доступ к любым сайтам и сервисам без ограничений
+                  Доступ ко ВСЕМ сайтам: запрещённым, заблокированным, торрентам. Обход глушилок и DPI.
                 </p>
               </div>
             </div>
@@ -479,6 +522,11 @@ PersistentKeepalive = 25
           </p>
         </footer>
 
+      </div>
+
+      <div className="cyber-watermark">
+        <Icon name="ShieldCheck" size={20} className="text-primary" />
+        <span>Cyber Security</span>
       </div>
     </div>
   );
