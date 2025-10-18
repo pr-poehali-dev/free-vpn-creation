@@ -87,7 +87,7 @@ AllowedIPs = 0.0.0.0/0`;
             <h1 className="text-6xl font-black gradient-text">CyberVPN</h1>
           </div>
           <p className="text-xl text-muted-foreground font-light">
-            Быстро • Надёжно • Защищает!
+            VPN SECRET - Быстро надёжно! С нами можно все!
           </p>
         </header>
 
@@ -341,8 +341,13 @@ AllowedIPs = 0.0.0.0/0`;
             <p className="text-muted-foreground mb-4 max-w-md">
               Если возникли сложности с подключением, обратитесь в поддержку
             </p>
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-              Связаться с поддержкой
+            <Button 
+              variant="outline" 
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              onClick={() => window.open('https://t.me/Osint_Gromov', '_blank')}
+            >
+              <Icon name="Send" size={20} className="mr-2" />
+              Написать в Telegram
             </Button>
           </Card>
         </div>
