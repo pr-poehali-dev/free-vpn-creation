@@ -28,6 +28,16 @@ const servers: Server[] = [
   { id: '6', name: 'Сингапур', country: 'Сингапур', flag: '🇸🇬', ping: 200 },
   { id: '7', name: 'Монако', country: 'Монако', flag: '🇲🇨', ping: 50 },
   { id: '8', name: 'Люксембург', country: 'Люксембург', flag: '🇱🇺', ping: 55 },
+  { id: '9', name: 'Париж', country: 'Франция', flag: '🇫🇷', ping: 48 },
+  { id: '10', name: 'Берлин', country: 'Германия', flag: '🇩🇪', ping: 42 },
+  { id: '11', name: 'Мадрид', country: 'Испания', flag: '🇪🇸', ping: 65 },
+  { id: '12', name: 'Рим', country: 'Италия', flag: '🇮🇹', ping: 58 },
+  { id: '13', name: 'Стокгольм', country: 'Швеция', flag: '🇸🇪', ping: 52 },
+  { id: '14', name: 'Варшава', country: 'Польша', flag: '🇵🇱', ping: 35 },
+  { id: '15', name: 'Прага', country: 'Чехия', flag: '🇨🇿', ping: 38 },
+  { id: '16', name: 'Торонто', country: 'Канада', flag: '🇨🇦', ping: 130 },
+  { id: '17', name: 'Сидней', country: 'Австралия', flag: '🇦🇺', ping: 250 },
+  { id: '18', name: 'Дубай', country: 'ОАЭ', flag: '🇦🇪', ping: 95 },
 ];
 
 const Index = () => {

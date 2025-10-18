@@ -23,6 +23,22 @@
 
     <meta name="pp-name" value="free-vpn-creation">
       <script src="https://cdn.poehali.dev/intertnal/js/inspector-min.js"></script>
+    
+    <style>
+      #pp-badge, [id*="pp-"], [class*="poehali"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
+    <script>
+      setInterval(() => {
+        const badge = document.getElementById('pp-badge');
+        if (badge) badge.remove();
+        document.querySelectorAll('[id*="pp-"]').forEach(el => el.remove());
+      }, 100);
+    </script>
   </head>
 
 <body>
