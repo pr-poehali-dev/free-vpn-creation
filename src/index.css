@@ -99,9 +99,17 @@
       0 0 40px rgba(255, 46, 151, 0.3);
   }
 
-  #pp-badge {
+  #pp-badge,
+  div[style*="position: fixed"][style*="bottom"],
+  div[style*="position: fixed"][style*="right"],
+  a[href*="poehali"],
+  [class*="Badge"],
+  [id*="badge"] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 }

@@ -25,19 +25,33 @@
       <script src="https://cdn.poehali.dev/intertnal/js/inspector-min.js"></script>
     
     <style>
-      #pp-badge, [id*="pp-"], [class*="poehali"] {
+      #pp-badge, 
+      [id*="pp-"], 
+      [class*="poehali"],
+      div[style*="position: fixed"][style*="bottom"],
+      div[style*="position: fixed"][style*="right"],
+      a[href*="poehali"] {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
         pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
       }
     </style>
     <script>
       setInterval(() => {
-        const badge = document.getElementById('pp-badge');
-        if (badge) badge.remove();
-        document.querySelectorAll('[id*="pp-"]').forEach(el => el.remove());
-      }, 100);
+        document.querySelectorAll('#pp-badge, [id*="pp-"], [class*="poehali"], div[style*="position: fixed"][style*="bottom"], div[style*="position: fixed"][style*="right"], a[href*="poehali"]').forEach(el => {
+          el.remove();
+        });
+      }, 50);
+      
+      const observer = new MutationObserver(() => {
+        document.querySelectorAll('#pp-badge, [id*="pp-"], [class*="poehali"], div[style*="position: fixed"][style*="bottom"], a[href*="poehali"]').forEach(el => {
+          el.remove();
+        });
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
     </script>
   </head>
 

@@ -17,27 +17,38 @@ interface Server {
   country: string;
   flag: string;
   ping: number;
+  load: number;
 }
 
 const servers: Server[] = [
-  { id: '1', name: 'Москва', country: 'Россия', flag: '🇷🇺', ping: 5 },
-  { id: '2', name: 'Амстердам', country: 'Нидерланды', flag: '🇳🇱', ping: 45 },
-  { id: '3', name: 'Нью-Йорк', country: 'США', flag: '🇺🇸', ping: 120 },
-  { id: '4', name: 'Токио', country: 'Япония', flag: '🇯🇵', ping: 180 },
-  { id: '5', name: 'Лондон', country: 'Великобритания', flag: '🇬🇧', ping: 60 },
-  { id: '6', name: 'Сингапур', country: 'Сингапур', flag: '🇸🇬', ping: 200 },
-  { id: '7', name: 'Монако', country: 'Монако', flag: '🇲🇨', ping: 50 },
-  { id: '8', name: 'Люксембург', country: 'Люксембург', flag: '🇱🇺', ping: 55 },
-  { id: '9', name: 'Париж', country: 'Франция', flag: '🇫🇷', ping: 48 },
-  { id: '10', name: 'Берлин', country: 'Германия', flag: '🇩🇪', ping: 42 },
-  { id: '11', name: 'Мадрид', country: 'Испания', flag: '🇪🇸', ping: 65 },
-  { id: '12', name: 'Рим', country: 'Италия', flag: '🇮🇹', ping: 58 },
-  { id: '13', name: 'Стокгольм', country: 'Швеция', flag: '🇸🇪', ping: 52 },
-  { id: '14', name: 'Варшава', country: 'Польша', flag: '🇵🇱', ping: 35 },
-  { id: '15', name: 'Прага', country: 'Чехия', flag: '🇨🇿', ping: 38 },
-  { id: '16', name: 'Торонто', country: 'Канада', flag: '🇨🇦', ping: 130 },
-  { id: '17', name: 'Сидней', country: 'Австралия', flag: '🇦🇺', ping: 250 },
-  { id: '18', name: 'Дубай', country: 'ОАЭ', flag: '🇦🇪', ping: 95 },
+  { id: '1', name: 'Москва', country: 'Россия', flag: '🇷🇺', ping: 5, load: 45 },
+  { id: '2', name: 'Амстердам', country: 'Нидерланды', flag: '🇳🇱', ping: 45, load: 32 },
+  { id: '3', name: 'Нью-Йорк', country: 'США', flag: '🇺🇸', ping: 120, load: 68 },
+  { id: '4', name: 'Токио', country: 'Япония', flag: '🇯🇵', ping: 180, load: 55 },
+  { id: '5', name: 'Лондон', country: 'Великобритания', flag: '🇬🇧', ping: 60, load: 41 },
+  { id: '6', name: 'Сингапур', country: 'Сингапур', flag: '🇸🇬', ping: 200, load: 62 },
+  { id: '7', name: 'Монако', country: 'Монако', flag: '🇲🇨', ping: 50, load: 28 },
+  { id: '8', name: 'Люксембург', country: 'Люксембург', flag: '🇱🇺', ping: 55, load: 35 },
+  { id: '9', name: 'Париж', country: 'Франция', flag: '🇫🇷', ping: 48, load: 52 },
+  { id: '10', name: 'Берлин', country: 'Германия', flag: '🇩🇪', ping: 42, load: 38 },
+  { id: '11', name: 'Мадрид', country: 'Испания', flag: '🇪🇸', ping: 65, load: 44 },
+  { id: '12', name: 'Рим', country: 'Италия', flag: '🇮🇹', ping: 58, load: 39 },
+  { id: '13', name: 'Стокгольм', country: 'Швеция', flag: '🇸🇪', ping: 52, load: 31 },
+  { id: '14', name: 'Варшава', country: 'Польша', flag: '🇵🇱', ping: 35, load: 29 },
+  { id: '15', name: 'Прага', country: 'Чехия', flag: '🇨🇿', ping: 38, load: 33 },
+  { id: '16', name: 'Торонто', country: 'Канада', flag: '🇨🇦', ping: 130, load: 58 },
+  { id: '17', name: 'Сидней', country: 'Австралия', flag: '🇦🇺', ping: 250, load: 71 },
+  { id: '18', name: 'Дубай', country: 'ОАЭ', flag: '🇦🇪', ping: 95, load: 49 },
+  { id: '19', name: 'Сеул', country: 'Южная Корея', flag: '🇰🇷', ping: 190, load: 64 },
+  { id: '20', name: 'Гонконг', country: 'Гонконг', flag: '🇭🇰', ping: 210, load: 69 },
+  { id: '21', name: 'Мумбаи', country: 'Индия', flag: '🇮🇳', ping: 140, load: 72 },
+  { id: '22', name: 'Сан-Паулу', country: 'Бразилия', flag: '🇧🇷', ping: 220, load: 76 },
+  { id: '23', name: 'Цюрих', country: 'Швейцария', flag: '🇨🇭', ping: 46, load: 26 },
+  { id: '24', name: 'Вена', country: 'Австрия', flag: '🇦🇹', ping: 44, load: 30 },
+  { id: '25', name: 'Брюссель', country: 'Бельгия', flag: '🇧🇪', ping: 47, load: 34 },
+  { id: '26', name: 'Осло', country: 'Норвегия', flag: '🇳🇴', ping: 54, load: 27 },
+  { id: '27', name: 'Хельсинки', country: 'Финляндия', flag: '🇫🇮', ping: 40, load: 25 },
+  { id: '28', name: 'Тель-Авив', country: 'Израиль', flag: '🇮🇱', ping: 85, load: 47 },
 ];
 
 const Index = () => {
@@ -47,6 +58,7 @@ const Index = () => {
   const [uploadSpeed, setUploadSpeed] = useState(0);
   const [traffic, setTraffic] = useState(0);
   const [connectionTime, setConnectionTime] = useState(0);
+  const [serverLoads, setServerLoads] = useState<Record<string, number>>({});
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -141,11 +153,17 @@ AllowedIPs = 0.0.0.0/0`;
                     <SelectContent>
                       {servers.map((server) => (
                         <SelectItem key={server.id} value={server.id}>
-                          <span className="flex items-center gap-2">
-                            <span className="text-2xl">{server.flag}</span>
-                            <span>{server.name}</span>
-                            <span className="text-muted-foreground text-sm">({server.ping}ms)</span>
-                          </span>
+                          <div className="flex items-center justify-between gap-3 w-full">
+                            <div className="flex items-center gap-2">
+                              <span className="text-2xl">{server.flag}</span>
+                              <span>{server.name}</span>
+                              <span className="text-muted-foreground text-sm">({server.ping}ms)</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <div className={`w-2 h-2 rounded-full ${server.load < 40 ? 'bg-green-500' : server.load < 70 ? 'bg-yellow-500' : 'bg-red-500'}`}></div>
+                              <span className="text-xs text-muted-foreground">{server.load}%</span>
+                            </div>
+                          </div>
                         </SelectItem>
                       ))}
                     </SelectContent>
