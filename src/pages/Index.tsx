@@ -332,14 +332,72 @@ AllowedIPs = 0.0.0.0/0`;
           </div>
         </div>
 
+        <div className="mb-12">
+          <h2 className="text-4xl font-bold text-center mb-10 gradient-text">
+            Частые вопросы
+          </h2>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            <Card className="p-6 hover:border-primary transition-colors duration-300">
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                <Icon name="HelpCircle" size={24} className="text-primary" />
+                Действительно ли VPN бесплатный?
+              </h3>
+              <p className="text-muted-foreground">
+                Да! VPN SECRET полностью бесплатный, без скрытых платежей, подписок или ограничений по трафику. Мы не просим данные карты и не показываем рекламу.
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-primary transition-colors duration-300">
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                <Icon name="HelpCircle" size={24} className="text-primary" />
+                Какие сайты можно разблокировать?
+              </h3>
+              <p className="text-muted-foreground">
+                Абсолютно любые! Наш VPN обходит все блокировки и позволяет получить доступ к заблокированным сайтам, социальным сетям, мессенджерам и стриминговым сервисам.
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-primary transition-colors duration-300">
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                <Icon name="HelpCircle" size={24} className="text-primary" />
+                Безопасно ли использовать VPN?
+              </h3>
+              <p className="text-muted-foreground">
+                Да! Мы используем протокол WireGuard с современным шифрованием. Ваши данные защищены, IP-адрес скрыт, а история посещений не логируется.
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-primary transition-colors duration-300">
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                <Icon name="HelpCircle" size={24} className="text-primary" />
+                Как быстро работает VPN?
+              </h3>
+              <p className="text-muted-foreground">
+                WireGuard — самый быстрый VPN-протокол. Скорость практически не отличается от обычного интернета. Выбирайте ближайший сервер для максимальной скорости.
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-primary transition-colors duration-300">
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                <Icon name="HelpCircle" size={24} className="text-primary" />
+                На скольких устройствах можно использовать?
+              </h3>
+              <p className="text-muted-foreground">
+                Без ограничений! Устанавливайте на iPhone, iPad, Android, компьютер — на все ваши устройства. Один QR-код работает везде.
+              </p>
+            </Card>
+          </div>
+        </div>
+
         <div className="text-center">
           <Card className="p-8 inline-block">
             <div className="mb-4">
-              <Icon name="Info" size={32} className="text-primary mx-auto" />
+              <Icon name="MessageCircle" size={32} className="text-primary mx-auto" />
             </div>
             <h3 className="text-2xl font-bold mb-3">Нужна помощь?</h3>
             <p className="text-muted-foreground mb-4 max-w-md">
-              Если возникли сложности с подключением, обратитесь в поддержку
+              Если возникли сложности с подключением — напишите в техподдержку
             </p>
             <Button 
               variant="outline" 
